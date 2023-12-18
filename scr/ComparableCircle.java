@@ -1,7 +1,7 @@
 public class ComparableCircle  extends Circle
         implements Comparable<ComparableCircle>{
     public ComparableCircle( double radius, String color, boolean filled) {
-        super(color, filled, radius);
+        super(radius, color, filled);
     }
 
     public ComparableCircle(double radius) {
@@ -13,8 +13,6 @@ public class ComparableCircle  extends Circle
 
     @Override
     public int compareTo(ComparableCircle o) {
-        if (getRadius() > o.getRadius()) return 1;
-        else if (getRadius() < o.getRadius()) return -1;
-        else return 1;
+        return Double.compare(getRadius(), o.getRadius());
     }
 }
