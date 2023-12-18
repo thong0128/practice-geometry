@@ -1,4 +1,4 @@
-public class Circle extends Shape{
+public class Circle extends Shape implements Resizeable{
     private double radius;
 
     public Circle() {
@@ -34,5 +34,10 @@ public class Circle extends Shape{
                 + this.radius
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        radius += radius*percent/100;
     }
 }
